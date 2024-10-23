@@ -55,30 +55,41 @@
     const db = getFirestore();
 
 
-    const querySnapshot = await getDocs(collection(db, "User"));
-    querySnapshot.forEach((doc) => {
-        console.log(JSON.stringify(doc.data()));
-    });
+  
 
-    var input_name = document.getElementById("name")
-    var input_email = document.getElementById("email")
-    var input_phone = document.getElementById("phone")
+    var input_name = document.getElementById("name").value
+    var input_email = document.getElementById("email").value
+    var input_phone = document.getElementById("phone").value
     var submit = document.getElementById("submit")
 
 
     document.getElementById("submit").addEventListener("click", async function() {
 
-        
-        try {
-                const docRef = await addDoc(collection(db, "User"), {
-                    name: input_name.value,
-                    email: input_email.value,
-                    phone: input_phone.value
-                });
-                console.log("Document written with ID: ", docRef.id);
-            } catch (e) {
-                console.error("Error adding document: ", e);
-            }
+        const querySnapshot = await getDocs(collection(db, "User"));
+            querySnapshot.forEach( async (doc) => {
+                const data = doc.data()
+                console.log(data.name);
+
+                if(data.phone == input_phone && data.email == input_email){
+                    console.log("matching found");
+                }else{
+                    console.log("matching not found");
+                    try {
+                        const docRef = await addDoc(collection(db, "User"), {
+                            name: input_name.value,
+                            email: input_email.value,
+                            phone: input_phone.value
+                        });
+                        console.log("Document written with ID: ", docRef.id);
+                    } catch (e) {
+                        console.error("Error adding document: ", e);
+                    }
+                }
+
+            });
+
+    
+            
     });
         
 
