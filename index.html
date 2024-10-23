@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumini</title>
+</head>
+<body>
+    
+    <div class="waiting_list">
+
+        <input id="name" type="text" placeholder="Enter name" ><br>
+        <input id="email" type="text" placeholder="Enter email" ><br>
+        <input id="phone" type="text" placeholder="Enter phone" >
+
+        <button id="submit" >click me</button>
+    </div>
+    
+</body>
+<script type="module">
+
+  
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+    import { getFirestore, collection, query, where, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+  
+
+  
+    const firebaseConfig = {
+  
+      apiKey: "AIzaSyCOgz9wchIDGUCaud4fepkqMSfzgOKv9Gg",
+  
+      authDomain: "alumini-84e9e.firebaseapp.com",
+  
+      projectId: "alumini-84e9e",
+  
+      storageBucket: "alumini-84e9e.appspot.com",
+  
+      messagingSenderId: "517973210768",
+  
+      appId: "1:517973210768:web:b3a867bb1053683c2e4a15",
+  
+      measurementId: "G-XBYZJH723H"
+  
+    };
+  
+  
+    // Initialize Firebase
+  
+    const app = initializeApp(firebaseConfig);
+  
+    const analytics = getAnalytics(app);
+
+    const db = getFirestore();
+
+
+    const querySnapshot = await getDocs(collection(db, "User"));
+    querySnapshot.forEach((doc) => {
+        console.log(JSON.stringify(doc.data()));
+    });
+
+    var input_name = document.getElementById("name")
+    var input_email = document.getElementById("email")
+    var input_phone = document.getElementById("phone")
+    var submit = document.getElementById("submit")
+
+
+    document.getElementById("submit").addEventListener("click", async function() {
+
+        
+        try {
+                const docRef = await addDoc(collection(db, "User"), {
+                    name: input_name.value,
+                    email: input_email.value,
+                    phone: input_phone.value
+                });
+                console.log("Document written with ID: ", docRef.id);
+            } catch (e) {
+                console.error("Error adding document: ", e);
+            }
+    });
+        
+
+
+  
+  </script>
+</html>
