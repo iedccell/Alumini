@@ -169,3 +169,21 @@ footer{
 .box p{
     text-align: center;
 }
+.about{
+    background-color: #1e2d4a;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+}
+.about h3{
+    width: 33vw;
+    color: #3db166;
+}
+.about-right{
+    width: 50vw;
+}
+.about-right a{
+    text-decoration: none;
+    color: white;
+    font-size: smaller;
+}
