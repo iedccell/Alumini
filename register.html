@@ -67,43 +67,52 @@
         var alert = document.getElementById('alert')
         console.log("button pressed");
 
-        
+        var Gdata = [];
         
         const querySnapshot = await getDocs(collection(db, "User"));
             querySnapshot.forEach( async (doc) => {
                 const data = doc.data()
-                console.log(data.name);
+                Gdata.push({email:data.email,phone:data.phone})
+            });
 
-                if(data.phone == input_phone || data.email == input_email){
-                    console.log("matching found");
-                    alert.innerText = "Existing credinals found!"
+            const filteredEmail = Gdata.filter((data) => {
+                return data.email == input_email
+            })
+            const filteredPhone = Gdata.filter((data) => {
+                return data.phone == input_phone
+            })
+            
+
+            
+            
+        if(filteredPhone.length > 0|| filteredEmail.length > 0){
+                console.log("matching found");
+                alert.innerText = "Existing credinals found!"
+                alert.style.opacity = 1;
+                setTimeout(()=>{
+                    alert.innerText = "";
+                    alert.style.opacity = 0;
+                },2000)
+            }else{
+                console.log("matching not found");
+                try {
+                    const docRef = await addDoc(collection(db, "User"), {
+                        name: input_name,
+                        email: input_email,
+                        phone: input_phone
+                    });
+                    console.log("Document written with ID: ", docRef.id);
+                    alert.innerText = "Credinals added to waitinglist";
+                    alert.style.borderRightColor  = "green"
                     alert.style.opacity = 1;
                     setTimeout(()=>{
                         alert.innerText = "";
                         alert.style.opacity = 0;
                     },2000)
-                }else{
-                    console.log("matching not found");
-                    try {
-                        const docRef = await addDoc(collection(db, "User"), {
-                            name: input_name,
-                            email: input_email,
-                            phone: input_phone
-                        });
-                        console.log("Document written with ID: ", docRef.id);
-                        alert.innerText = "Credinals added to waitinglist";
-                        alert.style.borderRightColor  = "green"
-                        alert.style.opacity = 1;
-                        setTimeout(()=>{
-                            alert.innerText = "";
-                            alert.style.opacity = 0;
-                        },2000)
-                    } catch (e) {
-                        console.error("Error adding document: ", e);
-                    }
+                } catch (e) {
+                    console.error("Error adding document: ", e);
                 }
-
-            });
+            }
     });
         
     
