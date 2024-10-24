@@ -3,29 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Alumini</title>
 </head>
 <body>
     
-    <div class="waiting_list">
+    <header>
+
+        <div class="header-top">
+            <p>supportmain@gmail.com</p>
+            <p>+91 XXXX XXXX XX</p>
+        </div>
+        <div class="header-bottom">
+            <div class="header-b-left">
+                <div class="header-b-left-logo">
+                    <img src="./img/logo.png" alt="logo">
+                </div>
+                <div class="header-b-left-title">
+                    <p >College of Engineering and Management Punnapra</p>
+                    <p style="font-size: 8px;" >ISO 9001:2015 Certified Government Cost Sharing Engineering College Under CAPE <br>Approved by AICTE and Affiliated by APJ Abdul Kalam Technology University</p>
+                </div>
+            </div>
+            <div class="header-b-right">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li class="register" ><a href="#" style="color: white;" >Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <footer>
+        <div class="footor-left">
+            <div class="footor-left-top">
+                
+            </div>
+        </div>
+    </footer>
+    <!-- <div class="waiting_list">
 
         <input id="name" type="text" placeholder="Enter name" ><br>
         <input id="email" type="text" placeholder="Enter email" ><br>
         <input id="phone" type="text" placeholder="Enter phone" >
 
         <button id="submit" >click me</button>
-    </div>
+    </div> -->
     
 </body>
 <script type="module">
 
-  
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-  
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
     import { getFirestore, collection, query, where, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
-  
-
   
     const firebaseConfig = {
   
@@ -45,17 +77,11 @@
   
     };
   
-  
-    // Initialize Firebase
-  
     const app = initializeApp(firebaseConfig);
   
     const analytics = getAnalytics(app);
 
     const db = getFirestore();
-
-
-  
 
     var input_name = document.getElementById("name").value
     var input_email = document.getElementById("email").value
