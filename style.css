@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
     margin: 0px;
     padding: 0px;
@@ -129,6 +128,44 @@ footer{
     font-weight: 100;
     padding: 20px;
 }
+.hero{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./assets/img/hero-background.png");
+}
 .Hero-1{
-    
+    font-size: 20px;
+}
+.Hero-2{
+    font-size: 100px;
+    font-family: 'Playfair Display', serif;
+}
+.Hero-3{
+    font-size: 30px;
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+}
+.quotes{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("./assets/img/section-2-background.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30vh;
+}
+.box{
+    max-width: 25vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+.box p{
+    text-align: center;
 }
