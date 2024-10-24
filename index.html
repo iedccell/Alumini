@@ -28,10 +28,10 @@
             <div class="header-b-right">
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="#about">About Us</a></li>
                     <li><a href="#">Community</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li class="register" ><a href="#" style="color: white;" >Register</a></li>
+                    <li><a href="#footer">Contact Us</a></li>
+                    <li class="register" ><a href="./register.html" style="color: white;" >Register</a></li>
                 </ul>
             </div>
         </div>
@@ -45,20 +45,20 @@
     </section>
     <section class="quotes" >
         <div class="box">
-            <p>Bring Members together.</p>
-            <p>Creating a stronger community together.</p>
+            <p class="quotes-box-heading" >Bring <br> Members together.</p>
+            <p class="quotes-box-sub" >Creating a stronger community together.</p>
         </div>
         <div class="box">
-            <p>Connect with People.</p>
-            <p>Building bridges through shared moments.</p>
+            <p class="quotes-box-heading" >Connect <br> with People.</p>
+            <p class="quotes-box-sub" >Building bridges through shared moments.</p>
         </div>
         <div class="box">
-            <p>Share your Ideas.</p>
-            <p>Share you ideas and let them grow in reality.</p>
+            <p class="quotes-box-heading" >Share <br> your Ideas.</p>
+            <p class="quotes-box-sub" > Share you ideas and let them grow in reality.</p>
         </div>
         <div class="box">
-            <p>Job Portal.</p>
-            <p>Explore, Connect and Take the Lead.</p>
+            <p class="quotes-box-heading" >Job Portal.</p>
+            <p class="quotes-box-sub" >Explore, Connect and Take the Lead.</p>
         </div>
     </section>
 
@@ -66,7 +66,7 @@
 
 <!-- About Us -->
 
-    <section class="about" >
+    <section id="about" class="about" >
         <h3>About Our Campus</h3>
         <div class="about-right">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero consequatur dolorum debitis ipsum sunt, quod obcaecati quia totam perspiciatis expedita fugiat, iste cum natus accusantium! Exercitationem ullam fugit inventore hic.</p>
@@ -89,44 +89,44 @@
                 <img src="" alt="">
                 <p class="news-box-heading" >News & Update 01</p>
                 <p class="news-sub">Lorem ipsum dolor sit amet consectetur adipisicing </p>
-                <p class="news-learn-more" >learn more --> </p>
+                <p class="news-learn-more" >learn more -> </p>
             </div>
             <div class="news-box">
                 <img src="" alt="">
                 <p class="news-box-heading" >News & Update 01</p>
                 <p class="news-sub">Lorem ipsum dolor sit amet consectetur adipisicing </p>
-                <p class="news-learn-more" >learn more --> </p>
+                <p class="news-learn-more" >learn more -> </p>
             </div>
             <div class="news-box">
                 <img src="" alt="">
                 <p class="news-box-heading" >News & Update 01</p>
                 <p class="news-sub">Lorem ipsum dolor sit amet consectetur adipisicing </p>
-                <p class="news-learn-more" >learn more --> </p>
+                <p class="news-learn-more" >learn more -> </p>
             </div>
             <div class="news-box">
                 <img src="" alt="">
                 <p class="news-box-heading" >News & Update 01</p>
                 <p class="news-sub">Lorem ipsum dolor sit amet consectetur adipisicing </p>
-                <p class="news-learn-more" >learn more --> </p>
+                <p class="news-learn-more" >learn more -> </p>
             </div>
             <div class="news-box">
                 <img src="" alt="">
                 <p class="news-box-heading" >News & Update 01</p>
                 <p class="news-sub">Lorem ipsum dolor sit amet consectetur adipisicing </p>
-                <p class="news-learn-more" >learn more --> </p>
+                <p class="news-learn-more" >learn more -> </p>
             </div>
             <div class="news-box">
                 <img src="" alt="">
                 <p class="news-box-heading" >News & Update 01</p>
                 <p class="news-sub">Lorem ipsum dolor sit amet consectetur adipisicing </p>
-                <p class="news-learn-more" >learn more --> </p>
+                <p class="news-learn-more" >learn more -> </p>
             </div>
 
         </div>
     </section>
 <!-- About Us Complete -->
 
-    <footer>
+    <footer id="footer" >
         <div class="footor-left">
             <div class="footor-left-top">
                 <div class="footor-left-top-left">
@@ -163,73 +163,5 @@
     </div> -->
     
 </body>
-<script type="module">
 
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
-    import { getFirestore, collection, query, where, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
-  
-    const firebaseConfig = {
-  
-      apiKey: "AIzaSyCOgz9wchIDGUCaud4fepkqMSfzgOKv9Gg",
-  
-      authDomain: "alumini-84e9e.firebaseapp.com",
-  
-      projectId: "alumini-84e9e",
-  
-      storageBucket: "alumini-84e9e.appspot.com",
-  
-      messagingSenderId: "517973210768",
-  
-      appId: "1:517973210768:web:b3a867bb1053683c2e4a15",
-  
-      measurementId: "G-XBYZJH723H"
-  
-    };
-  
-    const app = initializeApp(firebaseConfig);
-  
-    const analytics = getAnalytics(app);
-
-    const db = getFirestore();
-
-    var input_name = document.getElementById("name").value
-    var input_email = document.getElementById("email").value
-    var input_phone = document.getElementById("phone").value
-    var submit = document.getElementById("submit")
-
-
-    document.getElementById("submit").addEventListener("click", async function() {
-
-        const querySnapshot = await getDocs(collection(db, "User"));
-            querySnapshot.forEach( async (doc) => {
-                const data = doc.data()
-                console.log(data.name);
-
-                if(data.phone == input_phone && data.email == input_email){
-                    console.log("matching found");
-                }else{
-                    console.log("matching not found");
-                    try {
-                        const docRef = await addDoc(collection(db, "User"), {
-                            name: input_name.value,
-                            email: input_email.value,
-                            phone: input_phone.value
-                        });
-                        console.log("Document written with ID: ", docRef.id);
-                    } catch (e) {
-                        console.error("Error adding document: ", e);
-                    }
-                }
-
-            });
-
-    
-            
-    });
-        
-
-
-  
-  </script>
 </html>
