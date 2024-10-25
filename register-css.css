@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 *{
     margin: 0px;
     padding: 0px;
@@ -14,19 +13,31 @@ body{
 .container{
     height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
 }
-.login-container{
+.login-poster{
+    width: 50vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px;
-    width: 25vw;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.148);
+    background-image: url('./assets/img/register-background.jpg');
+}
+.login-poster-container{
+    width: 30vw;
+    padding: 30px;
+    background-color: white;
+}
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    padding: 20px;
+    width: 50vw;
 }
 .register-top-text{
     padding-top: 30px;
@@ -34,21 +45,24 @@ body{
 }
 input{
     padding: 10px;
-    border: 1px black solid;
-    border-radius: 10px;
-    margin-top: 10px;
-    width: 20vw;
+    border: none;
+    border-bottom: 1px #1e1e1e solid;
+    margin-top: 40px;
+    width: 45vw;
+
 }
 button{
     margin-top: 30px;
-    background-color: #2ba8fb;
+    background-color: #192e59;
     border: none;
     padding: 10px ;
-    border-radius: 50px;
+    border-radius: 5px;
     color: white;
-    padding-left: 20px;
-    padding-right: 20px;
-
+    width: 45vw;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    outline: none;
 }
 .alert{
     border-right: 3px red solid;
@@ -62,4 +76,5 @@ button{
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.202);
     transition: 0.3s;
     opacity: 0;
+    z-index: 1;
 }
