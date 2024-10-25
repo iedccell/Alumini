@@ -11,10 +11,23 @@
 <body>
     
     <header>
-
+        <div id="navbar" class="navbar">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#footer">Contact Us</a></li>
+                <li><a class="register-mobile" href="./register.html" style="color: white;" >Register</a></li>
+            </ul>
+        </div>
         <div class="header-top">
             <p>supportmain@gmail.com</p>
             <p>+91 XXXX XXXX XX</p>
+            <button onclick="navbar()" class="burger" >
+                <i id="burger-icon" class="fa-solid fa-bars"></i>
+            </button>
+            
         </div>
         <div class="header-bottom">
             <div class="header-b-left">
@@ -164,5 +177,23 @@
     </div> -->
     
 </body>
+<script>
+    function check(){
+        console.log("hellow rold");
+        
+    }
 
+    function navbar(){
+        var navbarWidth = document.getElementById('navbar');
+        console.log(navbarWidth.offsetWidth);
+        if(navbarWidth.offsetWidth > 100){
+            navbarWidth.style.width = '0%';
+            navbarWidth.style.padding = '0vw'
+        }else{
+            navbarWidth.style.padding = '10vw'
+            navbarWidth.style.paddingTop = '80px'
+            navbarWidth.style.width = '50%';
+        }
+    }
+</script>
 </html>
