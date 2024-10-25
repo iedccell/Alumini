@@ -21,6 +21,12 @@ a{
     justify-content: left;
     align-items: flex-start;
 }
+.burger{
+    display: none;
+}
+.navbar{
+    display: none;
+}
 .header-top p{
     font-size: small;
 }
@@ -230,3 +236,4 @@ footer{
     font-size: 25px;
     font-weight: 600;
 }
+

@@ -1,5 +1,49 @@
 
 @media screen and (max-width: 480px) {
+    .burger{
+        display: flex;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1;
+        width: 30px ;
+        background-color: rgba(0, 0, 0, 0);
+        outline: none;
+        border: none;
+    }
+    .burger i{
+        color: white;
+        font-size: 30px;
+    }
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        background-color: #192e59;
+        position: fixed;
+        right: 0px;
+        top: 0px;
+        width: 0vw;
+        padding: 0vw;
+        height: 100vh;
+        justify-content: right;
+        align-items: flex-end;
+        padding-top: 0px;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+    .navbar ul{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .navbar ul li{
+        list-style: none;
+        text-align: right;
+        margin-top: 20px;
+    }
+    .navbar ul li a{
+        color: white;
+        text-decoration: none;
+    }
     .header-top{
         flex-direction: column;
     }
@@ -146,4 +190,5 @@
     button{
         width: 80vw;
     }
+    
   }
