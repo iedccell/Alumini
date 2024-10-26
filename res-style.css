@@ -209,4 +209,7 @@
     .news-img{
         width: 100%;
     }
+    .join-waitlist{
+        display: flex;
+    }
   }

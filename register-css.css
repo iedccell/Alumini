@@ -99,3 +99,7 @@ input{
     color: black;
     text-decoration: none;
 }
+
+.join-waitlist{
+    display: none;
+}
