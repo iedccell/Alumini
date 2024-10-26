@@ -209,4 +209,16 @@
     .news-img{
         width: 100%;
     }
+    .join-waitlist{
+        display: flex;
+    }
+    .container{
+        background-image: url('./assets/img/register-background.jpg');
+    }
+    .login-container{
+        background-color: white;
+        border-radius: 10px;
+        width: 80vw;
+        margin: 5vw;
+    }
   }
