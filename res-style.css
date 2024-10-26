@@ -54,6 +54,7 @@
         padding-right: 20px;
         padding-top: 10px;
         padding-bottom: 10px;
+        margin-left: -20px;
     }
     .header-b-left-title P{
         font-size: 12px;
@@ -69,6 +70,9 @@
 
     .header-b-right ul{
         display: none;
+    }
+    .hero{
+       background-position-x: -570px;
     }
     .Hero-1{
         font-size: 10px;
