@@ -10,6 +10,7 @@
         background-color: rgba(0, 0, 0, 0);
         outline: none;
         border: none;
+        z-index: 2;
     }
     .burger i{
         color: white;
@@ -199,6 +200,9 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+    .news-box p{
+        text-align: center;
     }
     .news-img{
         width: 100%;
