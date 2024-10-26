@@ -194,5 +194,13 @@
     button{
         width: 80vw;
     }
-    
+    .news-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .news-img{
+        width: 100%;
+    }
   }
