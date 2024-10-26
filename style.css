@@ -8,6 +8,7 @@ body{
     padding: 0px;
     font-family: "Poppins", sans-serif;
     color: white;
+    letter-spacing: -0.05em;
 }
 a{
     text-decoration: none;
@@ -228,12 +229,14 @@ footer{
 .news-bottom{
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    gap:50px;
 }
-.news-learn-more{
-    color: #3db166;
-}
+
 .news-box-heading{
     font-size: 25px;
     font-weight: 600;
 }
 
+.news-img{
+    width: 450px;
+}
